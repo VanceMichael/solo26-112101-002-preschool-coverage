@@ -160,5 +160,31 @@
       ],
       "value": "nov"
     }
+  },
+  {
+    "path": "/town/T1/replies",
+    "stage": "late",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        0,
+        "state"
+      ],
+      "value": "claimed"
+    }
+  },
+  {
+    "path": "/town/T2/replies",
+    "stage": "withdrawal",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        0,
+        "version"
+      ],
+      "value": 1
+    }
   }
 ]

@@ -191,6 +191,12 @@
           "revision": 1,
           "declarations": []
         }
+      },
+      "GET /town/T1/replies": {
+        "data": []
+      },
+      "GET /town/T2/replies": {
+        "data": []
       }
     },
     "late": {
@@ -220,6 +226,18 @@
             }
           ]
         }
+      },
+      "GET /town/T1/replies": {
+        "data": [
+          {
+            "case": "R-HR-17",
+            "version": 1,
+            "town": "T1",
+            "site": "hill",
+            "part": "h17a",
+            "state": "claimed"
+          }
+        ]
       }
     },
     "conflict": {
@@ -368,6 +386,30 @@
             }
           ]
         }
+      },
+      "GET /town/T1/replies": {
+        "data": [
+          {
+            "case": "R-HR-17",
+            "version": 1,
+            "town": "T1",
+            "site": "hill",
+            "part": "h17a",
+            "state": "claimed"
+          }
+        ]
+      },
+      "GET /town/T2/replies": {
+        "data": [
+          {
+            "case": "R-HR-17",
+            "version": 1,
+            "town": "T2",
+            "site": "river",
+            "part": "r17a",
+            "state": "received"
+          }
+        ]
       }
     }
   }

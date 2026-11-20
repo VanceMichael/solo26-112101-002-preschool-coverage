@@ -11,3 +11,7 @@
 `data/sources.json` 保存原始报文及站点页面。连续响应由来源按同一进程内的观察次数提供。阶段从 `initial` 启动，本地演练人员可用 `POST /scenario/阶段名` 切换，未覆盖的路由延用初始响应。切换不清空来源的请求记录。重开服务会复位。
 
 执行 `npm test` 核对来源契约。依赖锁仅包含 Node.js 标准库运行所需的项目清单。容器方式可先执行 `docker build -t preschool-coverage-sources .`，再执行 `docker run --rm preschool-coverage-sources`。镜像准备完成后的验证不需要外网。
+
+## 复核交接
+
+乡镇收件台允许按分队只读取该镇回执，`/town/T1/replies` 和 `/town/T2/replies` 分别返回各自答复。复核单按 `case` 和 `version` 区分。 `received` 仅表明收件，`claimed` 表明站点认领；答复所引用的 `part` 属于答复的站点。演练先用 17 日和 18 日记录试行县级复核，后续可逐镇签收。
