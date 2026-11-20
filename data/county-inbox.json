@@ -1,0 +1,35 @@
+{
+  "scope": [
+    {
+      "town": "T1",
+      "sites": [
+        "hill",
+        "grove"
+      ]
+    },
+    {
+      "town": "T2",
+      "sites": [
+        "river"
+      ]
+    }
+  ],
+  "review": [
+    {
+      "site": "river",
+      "day": "2026-10-17",
+      "issueTerm": "oct",
+      "id": "R4",
+      "result": "confirmed-present",
+      "references": [
+        "r17a",
+        "h17a"
+      ],
+      "authority": "县复核员"
+    }
+  ],
+  "requestedPeriods": [
+    "2026-10",
+    "2026-11"
+  ]
+}

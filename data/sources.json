@@ -1,0 +1,374 @@
+{
+  "stages": {
+    "initial": {
+      "GET /centers": {
+        "data": {
+          "sites": [
+            "hill",
+            "river",
+            "grove"
+          ],
+          "days": [
+            "2026-10-17",
+            "2026-10-18",
+            "2026-11-02"
+          ]
+        }
+      },
+      "GET /centers/hill/2026-10-17/seal": {
+        "data": {
+          "site": "hill",
+          "day": "2026-10-17",
+          "generation": 1,
+          "parts": [
+            {
+              "part": "h17a",
+              "count": 2
+            },
+            {
+              "part": "h17b",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "GET /centers/hill/part/h17a": {
+        "data": {
+          "batch": "h17a",
+          "site": "hill",
+          "day": "2026-10-17",
+          "issueTerm": "oct",
+          "records": [
+            {
+              "id": "H5",
+              "state": "present"
+            },
+            {
+              "id": "H3",
+              "state": "absent"
+            }
+          ]
+        }
+      },
+      "GET /centers/hill/part/h17b": {
+        "status": 503,
+        "data": {
+          "reason": "点位暂时离线"
+        }
+      },
+      "GET /centers/river/2026-10-17/seal": {
+        "status": 425,
+        "data": {
+          "reason": "尚未封账"
+        }
+      },
+      "GET /centers/river/part/r17a": {
+        "data": {
+          "batch": "r17a",
+          "site": "river",
+          "day": "2026-10-17",
+          "issueTerm": "oct",
+          "records": [
+            {
+              "id": "R4",
+              "state": "present"
+            },
+            {
+              "id": "H5",
+              "state": "present"
+            }
+          ]
+        }
+      },
+      "GET /centers/grove/2026-10-17/seal": {
+        "data": {
+          "site": "grove",
+          "day": "2026-10-17",
+          "generation": 1,
+          "parts": [
+            {
+              "part": "g17a",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "GET /centers/grove/part/g17a": {
+        "data": {
+          "batch": "g17a",
+          "site": "grove",
+          "day": "2026-10-17",
+          "issueTerm": "oct",
+          "records": [
+            {
+              "id": null,
+              "state": "closed"
+            }
+          ]
+        }
+      },
+      "GET /centers/grove/2026-10-18/seal": {
+        "data": {
+          "site": "grove",
+          "day": "2026-10-18",
+          "generation": 1,
+          "parts": [
+            {
+              "part": "g18a",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "GET /centers/grove/part/g18a": {
+        "data": {
+          "batch": "g18a",
+          "site": "grove",
+          "day": "2026-10-18",
+          "issueTerm": "oct",
+          "records": [
+            {
+              "id": "R4",
+              "state": "present"
+            }
+          ]
+        }
+      },
+      "GET /centers/river/2026-11-02/seal": {
+        "data": {
+          "site": "river",
+          "day": "2026-11-02",
+          "generation": 1,
+          "parts": [
+            {
+              "part": "r02a",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "GET /centers/river/part/r02a": {
+        "data": {
+          "batch": "r02a",
+          "site": "river",
+          "day": "2026-11-02",
+          "issueTerm": "nov",
+          "records": [
+            {
+              "id": "R4",
+              "state": "present"
+            }
+          ]
+        }
+      },
+      "GET /links/oct": {
+        "data": {
+          "revision": 1,
+          "declarations": [
+            {
+              "linkId": "L7",
+              "validFrom": "2026-10-16",
+              "validTo": "2026-10-31",
+              "state": "active",
+              "refs": [
+                {
+                  "site": "hill",
+                  "issueTerm": "oct",
+                  "id": "H5"
+                },
+                {
+                  "site": "river",
+                  "issueTerm": "oct",
+                  "id": "R4"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "GET /links/nov": {
+        "data": {
+          "revision": 1,
+          "declarations": []
+        }
+      }
+    },
+    "late": {
+      "GET /centers/hill/part/h17b": {
+        "data": {
+          "batch": "h17b",
+          "site": "hill",
+          "day": "2026-10-17",
+          "issueTerm": "oct",
+          "records": [
+            {
+              "id": "H8",
+              "state": "present"
+            }
+          ]
+        }
+      },
+      "GET /centers/river/2026-10-17/seal": {
+        "data": {
+          "site": "river",
+          "day": "2026-10-17",
+          "generation": 1,
+          "parts": [
+            {
+              "part": "r17a",
+              "count": 2
+            }
+          ]
+        }
+      }
+    },
+    "conflict": {
+      "GET /centers/hill/part/h17b": {
+        "data": {
+          "batch": "h17b",
+          "site": "hill",
+          "day": "2026-10-17",
+          "issueTerm": "oct",
+          "records": [
+            {
+              "id": "H8",
+              "state": "present"
+            }
+          ]
+        }
+      },
+      "GET /centers/river/2026-10-17/seal": {
+        "data": {
+          "site": "river",
+          "day": "2026-10-17",
+          "generation": 2,
+          "parts": [
+            {
+              "part": "r17a",
+              "count": 2
+            },
+            {
+              "part": "r17b",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "GET /links/oct": {
+        "data": {
+          "revision": 2,
+          "declarations": [
+            {
+              "linkId": "L7",
+              "validFrom": "2026-10-16",
+              "validTo": "2026-10-31",
+              "state": "active",
+              "refs": [
+                {
+                  "site": "hill",
+                  "issueTerm": "oct",
+                  "id": "H5"
+                },
+                {
+                  "site": "river",
+                  "issueTerm": "oct",
+                  "id": "R4"
+                }
+              ]
+            },
+            {
+              "linkId": "L8",
+              "validFrom": "2026-10-16",
+              "validTo": "2026-10-31",
+              "state": "active",
+              "refs": [
+                {
+                  "site": "hill",
+                  "issueTerm": "oct",
+                  "id": "H5"
+                },
+                {
+                  "site": "river",
+                  "issueTerm": "oct",
+                  "id": "R9"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "withdrawal": {
+      "GET /centers/hill/part/h17b": {
+        "data": {
+          "batch": "h17b",
+          "site": "hill",
+          "day": "2026-10-17",
+          "issueTerm": "oct",
+          "records": [
+            {
+              "id": "H8",
+              "state": "present"
+            }
+          ]
+        }
+      },
+      "GET /centers/river/2026-10-17/seal": {
+        "data": {
+          "site": "river",
+          "day": "2026-10-17",
+          "generation": 2,
+          "parts": [
+            {
+              "part": "r17a",
+              "count": 2
+            },
+            {
+              "part": "r17b",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "GET /centers/river/part/r17b": {
+        "data": {
+          "batch": "r17b",
+          "site": "river",
+          "day": "2026-10-17",
+          "issueTerm": "oct",
+          "records": [
+            {
+              "id": "R9",
+              "state": "absent"
+            }
+          ]
+        }
+      },
+      "GET /links/oct": {
+        "data": {
+          "revision": 3,
+          "declarations": [
+            {
+              "linkId": "L7",
+              "validFrom": "2026-10-16",
+              "validTo": "2026-10-31",
+              "state": "withdrawn",
+              "refs": [
+                {
+                  "site": "hill",
+                  "issueTerm": "oct",
+                  "id": "H5"
+                },
+                {
+                  "site": "river",
+                  "issueTerm": "oct",
+                  "id": "R4"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

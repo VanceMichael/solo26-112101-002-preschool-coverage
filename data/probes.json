@@ -1,0 +1,164 @@
+[
+  {
+    "path": "/centers/hill/2026-10-17/seal",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "parts",
+        1,
+        "part"
+      ],
+      "value": "h17b"
+    }
+  },
+  {
+    "path": "/centers/hill/part/h17b",
+    "stage": "initial",
+    "method": "GET",
+    "status": 503,
+    "expected": {
+      "path": [
+        "reason"
+      ],
+      "value": "点位暂时离线"
+    }
+  },
+  {
+    "path": "/centers/river/2026-10-17/seal",
+    "stage": "initial",
+    "method": "GET",
+    "status": 425,
+    "expected": {
+      "path": [
+        "reason"
+      ],
+      "value": "尚未封账"
+    }
+  },
+  {
+    "path": "/centers/river/part/r17a",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "records",
+        1,
+        "id"
+      ],
+      "value": "H5"
+    }
+  },
+  {
+    "path": "/centers/grove/part/g17a",
+    "stage": "initial",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "records",
+        0,
+        "state"
+      ],
+      "value": "closed"
+    }
+  },
+  {
+    "path": "/centers/hill/part/h17b",
+    "stage": "late",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "records",
+        0,
+        "id"
+      ],
+      "value": "H8"
+    }
+  },
+  {
+    "path": "/centers/river/2026-10-17/seal",
+    "stage": "late",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "generation"
+      ],
+      "value": 1
+    }
+  },
+  {
+    "path": "/links/oct",
+    "stage": "conflict",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "declarations",
+        1,
+        "refs",
+        1,
+        "id"
+      ],
+      "value": "R9"
+    }
+  },
+  {
+    "path": "/centers/river/2026-10-17/seal",
+    "stage": "conflict",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "parts",
+        1,
+        "part"
+      ],
+      "value": "r17b"
+    }
+  },
+  {
+    "path": "/centers/river/part/r17b",
+    "stage": "withdrawal",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "records",
+        0,
+        "state"
+      ],
+      "value": "absent"
+    }
+  },
+  {
+    "path": "/links/oct",
+    "stage": "withdrawal",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "declarations",
+        0,
+        "state"
+      ],
+      "value": "withdrawn"
+    }
+  },
+  {
+    "path": "/centers/river/part/r02a",
+    "stage": "withdrawal",
+    "method": "GET",
+    "status": 200,
+    "expected": {
+      "path": [
+        "issueTerm"
+      ],
+      "value": "nov"
+    }
+  }
+]
